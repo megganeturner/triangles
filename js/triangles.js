@@ -60,5 +60,4 @@ var draw = function() {
   triangle(mouseX, mouseY, 850, 650, 550, 650);
 
 
-
 }
