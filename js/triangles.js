@@ -4,47 +4,67 @@ var setup = function() {
   background(50);
 };
 
-
-
+var a = 690;
+var b = 395;
+var c = 540;
+var d = 655;
+var e = 390;
+var f = 395;
 
 var draw = function() {
 
-
-  // Triangle 2
-  fill('#E187FF');
-  noStroke();
-  // if (keyIsDown(DOWN_ARROW)) {
-  //   rotate(90);
-  // }
-  triangle(700, 390, 550, 130, 850, 130);
-
   // Triangle 3
-  fill(255);
+  fill(95, 55, 100);
   noStroke();
-  triangle(700, 390, 850, 130, 1000, 390);
+  triangle(710, 385, 860, 125, 1010, 385);
 
   // Triangle 4
   colorMode(HSB, 100);
   var col = map(mouseX, 0, width, 0, 100);
   fill(col, 50, 100);
   frameRate(50);
-  triangle(700, 390, 1000, 390, 850, 650);
+  triangle(710, 395, 1010, 395, 860, 655);
 
 
   // Triangle 6
 
-  // Make this one move! http://p5js.org/reference/#/p5/keyIsDown
-  fill(255);
-  triangle(700, 390, 550, 650, 400, 390);
+  if (keyIsDown(LEFT_ARROW)) {
+    a -=5;
+    c-=5;
+    e-=5;
+    background(50);
+  }
+  if (keyIsDown(RIGHT_ARROW)) {
+    a+=5;
+    c+=5;
+    e+=5;
+    background(50);
+  }
+  if (keyIsDown(UP_ARROW)) {
+    b-=5;
+    d-=5;
+    f-=5;
+    background(50);
+  }
+  if (keyIsDown(DOWN_ARROW)) {
+    b+=5;
+    d+=5;
+    f+=5;
+    background(50);
+  }
 
-  // Triangle 1
+  fill(16, 67, 100);
+  triangle(a, b, c, d, e, f);
+
+  // Triangle 2
   colorMode(HSB, 100);
   var r = random(0, 100);
   fill(255);
   stroke(r,30,100);
   strokeWeight(4);
   frameRate(50);
-  triangle(700, 390, 400, 390, 550, 130);
+  triangle(700, 385, 550, 125, 850, 125);
+
 
   // Triangle 5
   noFill();
@@ -57,7 +77,18 @@ var draw = function() {
     background(50);
     // background(200, 200, 200);
   }
-  triangle(mouseX, mouseY, 850, 650, 550, 650);
+  triangle(mouseX, mouseY, 850, 655, 550, 655);
+
+  // Triangle 1
+  fill('#E187FF');
+  noStroke();
+  translate(542, 255);
+  if ((mouseX > 410 && mouseX < 670) && (mouseY > 145 && mouseY < 365)) {
+    rotate(radians(frameCount));
+    background(50);
+    // clear();
+  }
+  triangle(148, 130, -152, 130, -2, -130);
 
 
 }
