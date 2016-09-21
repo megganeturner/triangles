@@ -44,6 +44,7 @@ var draw = function() {
   if (mouseIsPressed) {
     fill(random(200, 255), random(200, 255), random(200, 255))
     frameRate(100);
+    background(200, 200, 200);
   }
   triangle(mouseX, mouseY, 850, 650, 550, 650);
 
