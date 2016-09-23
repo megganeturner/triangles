@@ -16,10 +16,16 @@ var y2 = -17;
 var y3 = -120;
 var y4 = -107;
 
+var r;
+
 var draw = function() {
   colorMode(HSB, 100);
-  var r = random(0, 100);
 
+
+  //if(frameCount % 10 == 0) {
+    r =  frameCount % 100; random(0, 100);
+  //}
+  
   // Rain Triangles
   fill(255);
   background(50);
@@ -66,7 +72,7 @@ var draw = function() {
   colorMode(HSB, 100);
   var col = map(mouseX, 0, width, 0, 100);
   fill(col, 50, 100);
-  frameRate(50);
+  frameRate(3);
   triangle(710, 395, 1010, 395, 860, 655);
 
 
@@ -128,7 +134,7 @@ var draw = function() {
   }
   triangle(mouseX, mouseY, 850, 655, 550, 655);
 
-}
+};
 
 function mouseWheel(event) {
   println(event.delta);
