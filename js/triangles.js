@@ -1,5 +1,5 @@
 var setup = function() {
-  createCanvas(1400, 780);
+  createCanvas(windowWidth, windowHeight);
   colorMode(HSB, 100);
   background(50);
 };
@@ -25,7 +25,7 @@ var draw = function() {
   //if(frameCount % 10 == 0) {
     r =  frameCount % 100; random(0, 100);
   //}
-  
+
   // Rain Triangles
   fill(255);
   background(50);
